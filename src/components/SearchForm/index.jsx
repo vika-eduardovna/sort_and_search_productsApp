@@ -13,7 +13,14 @@ export default function SearchForm() {
     <div className={s.container}>
         <form onChange={change}>
         <Input placeholder='Name' name='search'/>
-        <Button style={{backgroundColor: 'tomato'}}>Search</Button>
+        <Button>Search</Button>
+        <div className={s.sort_style}>
+          <p className={s.title_style}>Sort by:</p>
+          <select name="sort">
+            <option value="title">Title</option>
+            <option value="price">Price</option>
+          </select>
+        </div>
     </form>
     </div>
   )

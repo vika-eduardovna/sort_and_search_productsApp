@@ -6,7 +6,7 @@ import SearchForm from '../../components/SearchForm'
 export default function ListProducts() {
   return (
     <div className={s.container}>
-      <SearchForm/>
+        <SearchForm/>
         <ProductsContainer />
     </div>
   )

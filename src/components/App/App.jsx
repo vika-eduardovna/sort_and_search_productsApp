@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Context } from "../../context";
 import AddForm from "../../pages/AddForm";
 import ListProducts from "../../pages/ListProducts";
+import {Routes, Route} from 'react-router-dom'
+import NavMenu from "../NavMenu";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -24,12 +26,16 @@ function App() {
     ]);
   };
   
-  
   return (
-    <Context.Provider value={{addProduct, showProducts, searchProduct, setSearchWord}}>
-      <AddForm/>
-      <ListProducts/>
-    </Context.Provider>
+    <>
+      <Context.Provider value={{addProduct, showProducts, searchProduct, setSearchWord}}>
+        <NavMenu/>
+        <Routes>
+          <Route path="/add" element={<AddForm/>}/>
+          <Route path="/showlist" element={<ListProducts/>}/>
+        </Routes>
+      </Context.Provider>
+    </>
   );
 }
 
